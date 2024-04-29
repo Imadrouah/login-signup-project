@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    z-index: 20;
+}
+a {
+    color: orange;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #1d1d1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: arial;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 55vw;
+    justify-content: center;
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+@media (max-width: 767px) {
+    .container {
+        width: 80vw;
+    }
+}
+.container::before {
+    content: "";
+    align-self: center;
+    position: absolute;
+    width: 130px;
+    height: 200%;
+    background: linear-gradient(#00ccff, #d500f9);
+    animation: rotate 5s linear infinite;
+}
+.container::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    background-color: white;
+    border-radius: 5px;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+input {
+    border-radius: 5px;
+    border: none;
+}
+input:not(:last-of-type) {
+    background-color: #ccc;
+    padding: 9px 10px;
+    transition: 0.3s;
+}
+.shake {
+    animation: shake 200ms 3;
+    background-color: red !important;
+    color: white;
+}
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0px);
+    }
+    33% {
+        transform: translateX(-10px);
+    }
+    66% {
+        transform: translateX(10px);
+    }
+}
+input[type="submit"] {
+    margin-top: 15px;
+    background-color: orange;
+    padding: 9px 21px;
+    color: white;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+label:has(+ [required])::after {
+    content: " *";
+    color: red;
+}

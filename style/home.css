@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #1d1d1d;
+    height: 100vh;
+    font-family: arial;
+    color: white;
+}
+.nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+}
+.nav span {
+    font-weight: bold;
+    font-style: italic;
+    text-transform: capitalize;
+}
+.container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: black;
+    margin-top: 20px;
+}
+.box {
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 20px;
+}
+.box span {
+    font-weight: bold;
+    font-style: italic;
+    color: #333;
+}
+input[type="submit"],
+button {
+    border-radius: 5px;
+    border: none;
+    color: #333;
+    width: fit-content;
+    background-color: orange;
+    padding: 7px 14px;
+    color: white;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+input:not([type="submit"]) {
+    width: 60%;
+    border-radius: 5px;
+    border: none;
+    background-color: #ddd;
+    padding: 8px 10px;
+}
+.box div:has(#new, #gm) {
+    margin-top: 15px;
+}
+.shake {
+    animation: shake 200ms 3;
+    background-color: red !important;
+    color: white;
+}
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0px);
+    }
+    33% {
+        transform: translateX(-10px);
+    }
+    66% {
+        transform: translateX(10px);
+    }
+}
