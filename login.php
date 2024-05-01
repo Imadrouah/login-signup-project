@@ -2,7 +2,7 @@
 include "db.php";
 session_start();
 if (!empty($_SESSION["user"])) {
-    exit(header("Location: home.php"));
+    exit(header("Location: index.php"));
 }
 ?>
 
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $_SESSION["password"] = $row_data["password"];
                 $_SESSION["reg"] = $row_data["reg"];
                 $_SESSION["id"] = $row_data["id"];
-                exit(header("Location: home.php"));
+                exit(header("Location: index.php"));
             } else {
         ?>
                 <script>
